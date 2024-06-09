@@ -90,8 +90,8 @@ const ContactosComponent = () => {
                         <td>{contact.name} </td>
                         <td>{contact.phone}</td>
                         <td>
-                          <button className='button' onClick={() => openModalEdit(contact)}><BsFillBrushFill /></button>
-                          <button className='button' onClick={() => handleDelete(contact._id)}><BsFillTrash3Fill /></button>
+                          <button className='button' onClick={() => openModalEdit(contact)}><BsFillBrushFill />Edit</button>
+                          <button className='button' onClick={() => handleDelete(contact._id)}><BsFillTrash3Fill />Delete</button>
                         </td>
                       </tr>
                     ))}

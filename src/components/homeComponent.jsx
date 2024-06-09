@@ -97,9 +97,9 @@ const HomeComponent = () => {
               <tr key={user._id}>
                 <td onClick={() => handleUserClick(user._id)}>{user.name}</td>
                 <td>
-                  <button className='button' onClick={() => handleUserClick(user._id)}><BsJournal /></button>
-                  <button className='button' onClick={() => openModalEdit(user)}><BsFillBrushFill /></button>
-                  <button className='button' onClick={() => handleDelete(user._id)}><BsFillTrash3Fill /></button>
+                  <button className='button' onClick={() => handleUserClick(user._id)}><BsJournal />Contacts</button>
+                  <button className='button' onClick={() => openModalEdit(user)}><BsFillBrushFill />Edit</button>
+                  <button className='button' onClick={() => handleDelete(user._id)}><BsFillTrash3Fill />Delete</button>
                 </td>
               </tr>
             ))}
