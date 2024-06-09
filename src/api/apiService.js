@@ -13,7 +13,7 @@ export default {
     return apiClient.get('/users');
   },
   createUser(user) {
-    return apiClient.post('/users', user);
+    return apiClient.post('/users/new', user);
   },
   updateUser(id, user) {
     return apiClient.put(`/users/${id}`, user);

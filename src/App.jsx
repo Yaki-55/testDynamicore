@@ -1,48 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import apiService from './api/apiService';
+import HomeComponent from './components/homeComponent';
+import ContactosComponent from './components/contactosComponent';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [contacts, setContacts] = useState([]);
-  const [selectedUserId, setSelectedUserId] = useState(null);
-
-  useEffect(() => {
-    apiService.getUsers().then((response) => {
-      setUsers(response.data);
-    });
-  }, []);
-
-  const fetchContacts = (userId) => {
-    apiService.getContacts(userId).then((response) => {
-      setContacts(response.data);
-      setSelectedUserId(userId);
-    });
-  };
-
   return (
-    <div>
-      <h1>Usuarios</h1>
-      <ul>
-        {users.map((user) => (
-          <li key={user._id} onClick={() => fetchContacts(user._id)}>
-            {user.name}, 
-            {user._id}
-          </li>
-        ))}
-      </ul>
-
-      {selectedUserId && (
-        <div>
-          <h2>Contactos del Usuario</h2>
-          <ul>
-            {contacts.map((contact) => (
-              <li key={contact._id}>{contact.name} - {contact.phone}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeComponent />} />
+        <Route path='/contactos/:id' element={<ContactosComponent />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
