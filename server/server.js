@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/contact_directory', { // usar IPv4
+mongoose.connect('mongodb+srv://mely020202:ESdHwtmAEVQGR3HD@test.gft6jhz.mongodb.net/', { // usar IPv4
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 30000, // 30 segundos
